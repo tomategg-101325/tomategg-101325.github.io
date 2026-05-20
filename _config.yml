@@ -22,7 +22,7 @@ title: "101325 - Personal Site"
 # email: fireworks_579@sjtu.edu.cn
 description: >- # this means to ignore newlines until "baseurl:"
   The personal website of a very interesting person XD
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tomategg-101325.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: (none)
 # github_username:  tomategg-101325
