@@ -3,15 +3,16 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
-title: "主页"
+title: "Homepage"
+permalink: "/en/"
 ---
 
-🇬🇧 Click [here](/en/) for the English site.
+🇨🇳 前往中文主页，请访问[此处](/index/)。
 
-## 帖子
+## Posts
 
 <ul>
-  {% for post in site.categories.zhcn %}
+  {% for post in site.categories.enus %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
       {{ post.excerpt }}
@@ -19,4 +20,3 @@ title: "主页"
     </li>
   {% endfor %}
 </ul>
-
