@@ -10,9 +10,9 @@ categories: en-us-page
 
 # Welcome!
 
-Hi everyone, welcome to my personal site! The site contains tech blogs and my own thought pieces 😺
+Hi everyone, welcome to my personal site! The site contains tech blogs and my own thought pieces 😺<br>You are also welcome to visit the [About](/en/about) page for more information about me.
 
-You are also welcome to visit the [About](/en/about) page for more information about me.
+[Subscribe](/feed.xml) via RSS.
 
 # Posts
 
