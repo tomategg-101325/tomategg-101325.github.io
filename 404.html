@@ -1,25 +1,40 @@
 ---
 permalink: /404.html
-layout: page
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <!-- HEADER with navigation -->
+  <header>
+    <div class="site-branding">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+  </header>
 
-<div class="container">
-  <h1>404</h1>
+  <!-- MAIN CONTENT (fill this in per page) -->
+  <main>
+    <div class="container">
+      <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+      <p><strong>Page not found :(</strong></p>
+      <p>The requested page could not be found.</p>
+    </div>
+  </main>
+
+  <!-- FOOTER with site name & description -->
+  <footer>
+    <p>{{ site.description }}</p>
+    <p>&copy; {{ site.time | date: "%Y-%m" }} {{ site.title }}. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
