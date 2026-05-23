@@ -8,7 +8,7 @@ permalink: /en/about/
 
 ## Identity
 
-- Class of 2028, **Electronic & Computer Engineering**, Shanghai Jiao Tong University
+- Class of 2028, **Electronic & Computer Engineering (ECE)**, Shanghai Jiao Tong University
 - **Embedded system** & **IC design** enthusiast
 - TA for courses "Chemistry", **"Honors Physics I" (current)**, etc.
 

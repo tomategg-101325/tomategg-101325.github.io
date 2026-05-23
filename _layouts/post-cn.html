@@ -27,7 +27,7 @@
   <!-- MAIN CONTENT (fill this in per page) -->
   <main>
     <h1>{{ page.title }}</h1>
-    <p><img src="{{ '/assets/icons/calendar.png' | relative_url }}" title="日期" alt="日期" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ '/assets/icons/tag.png' | relative_url }}" title="标签" alt="标签" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.tags | join: "、" }}</p>
+    <p style="color:gray"><img src="{{ '/assets/icons/calendar.png' | relative_url }}" title="日期" alt="日期" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ '/assets/icons/tag.png' | relative_url }}" title="标签" alt="标签" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.tags | join: "、" }}</p>
     {{ content }}
   </main>
 

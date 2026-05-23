@@ -14,6 +14,8 @@ Hi everyone, welcome to my personal site! The site contains tech blogs and my ow
 
 [Subscribe](/feed.xml) via RSS.
 
+<br><br>
+
 # Posts
 
 <ul>
