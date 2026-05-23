@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <!-- HEADER with navigation -->
+  <header>
+    <div class="site-branding">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+    <nav>
+      <ul>
+        <!-- Add or remove pages as needed -->
+        <li><a href="{{ '/' | relative_url }}">主页</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">关于</a></li>
+        <li><a href="{{ '/en/' | relative_url }}">🇬🇧 English</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT (fill this in per page) -->
+  <main>
+    <h1>{{ page.title }}</h1>
+    <p><img src="{{ '/assets/icons/calendar.png' | relative_url }}" title="日期" alt="日期" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ '/assets/icons/tag.png' | relative_url }}" title="标签" alt="标签" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.tags | join: "、" }}</p>
+    {{ content }}
+  </main>
+
+  <!-- FOOTER with site name & description -->
+  <footer>
+    <p>{{ site.description }}</p>
+    <p>&copy; {{ site.time | date: "%Y-%m" }} {{ site.title }}。所有权利保留。</p>
+  </footer>
+</body>
+</html>

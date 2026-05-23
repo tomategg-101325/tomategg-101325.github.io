@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-cn
 title:  "Welcome to Jekyll!"
 date:   2026-05-20 15:07:23 +0800
 categories: en-us
