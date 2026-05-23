@@ -7,19 +7,21 @@ title: "主页"
 categories: zh-cn-page
 ---
 
-欢迎来到我的个人网站！本站会盛放一些技术博客和自己的碎碎念😺
+# 欢迎！
+
+嗨，欢迎来到我的个人网站！本站会盛放一些技术博客和自己的碎碎念😺
 
 大家也可以访问[关于](/about/)页面，更深入地了解我。
 
-🇬🇧 Click [here](/en/) for the English site.
-
-## 帖子
+# 帖子
 
 <ul>
   {% for post in site.categories.zh-cn %}
     <li>
-      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-      <p style="color:gray">标签：{{ post.tags | sort }}</p>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p style="color:gray">
+        <img src="{{ '/assets/icons/calendar.png' | relative_url }}" title="日期" alt="日期" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ post.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ '/assets/icons/tag.png' | relative_url }}" title="标签" alt="标签" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ post.tags | join: "、" }}
+      </p>
       <p>{{ post.excerpt }}</p>
       <hr>
     </li>
