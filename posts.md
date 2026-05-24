@@ -3,23 +3,15 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page-cn
-title: "主页"
+title: "帖子"
 categories: zh-cn-page
+permalink: "/posts/"
 ---
 
-# 欢迎！
-
-嗨，欢迎来到我的个人网站！本站会盛放一些技术博客和自己的碎碎念😺<br>大家也可以访问[关于](/about/)页面，更深入地了解我。
-
-[订阅](/feed.xml) RSS。
-
-<br>
-
-# 最新帖子
+# 所有帖子
 
 <ul>
-  {% assign latest-posts = site.categories.zh-cn | sort: 'date' | reverse %}
-  {% for post in latest-posts limit:3 %}
+  {% for post in site.categories.zh-cn %}
     <li>
       <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
       <p style="color:gray">
@@ -30,5 +22,4 @@ categories: zh-cn-page
     </li>
   {% endfor %}
 </ul>
-<br>
-[查看更多……](/posts/)
+

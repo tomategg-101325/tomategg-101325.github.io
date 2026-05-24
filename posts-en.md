@@ -3,24 +3,15 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page-en
-title: "Home"
-permalink: "/en/"
+title: "Posts"
+permalink: "/en/posts/"
 categories: en-us-page
 ---
 
-# Welcome!
-
-Hi everyone, welcome to my personal site! The site contains tech blogs and my own thought pieces 😺<br>You are also welcome to visit the [About](/en/about) page for more information about me.
-
-[Subscribe](/feed.xml) via RSS.
-
-<br>
-
-# Latest Posts
+# All Posts
 
 <ul>
-  {% assign latest-posts = site.categories.en-us | sort: 'date' | reverse %}
-  {% for post in latest-posts limit:3 %}
+  {% for post in site.categories.en-us %}
     <li>
       <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
       <p style="color:gray">
@@ -31,5 +22,3 @@ Hi everyone, welcome to my personal site! The site contains tech blogs and my ow
     </li>
   {% endfor %}
 </ul>
-<br>
-[View more...](/en/posts/)
