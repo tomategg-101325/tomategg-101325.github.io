@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: "番茄炒蛋🍅🥚"
+title: "番茄炒蛋 🍅🥚"
 title-en: "Tomato & Egg 🍅🥚"
 # email: fireworks_579@sjtu.edu.cn
 description: "一个有趣的家伙的个人网站 :P"
