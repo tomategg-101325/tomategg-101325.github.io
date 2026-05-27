@@ -104,6 +104,7 @@ main p {
   margin-bottom: 1rem;
 }
 
+
 main code {
   background: #f4f4f4;
   padding: 0.2em 0.4em;
@@ -112,10 +113,78 @@ main code {
   font-size: 0.9em;
 }
 
+
+/* Inline */
+/*
+code {
+  background: #f3f3f3;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Block */
+pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1.2em 1.5em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  tab-size: 4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid #333;
+  position: relative;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}*/
+
 main img {
   max-width: 100%;
   height: auto;
   border-radius: 0px;
+}
+
+main ul,
+main ol {
+  margin-bottom: 1rem;      /* matches your paragraph spacing */
+  padding-left: 2rem;       /* restores bullet/number indentation */
+}
+
+blockquote {
+  margin: 1.5rem 0;                 /* same vertical rhythm as paragraphs */
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #2a7ae2;   /* accent colour matching your links */
+  background: #f7f9fc;              /* very light blue-grey background */
+  color: #4a4a4a;
+  border-radius: 0 6px 6px 0;       /* rounds the right corners slightly */
+}
+
+blockquote p {
+  margin-bottom: 0.5rem;            /* override main p spacing inside blockquote */
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;                 /* no extra space after the last paragraph */
+}
+
+blockquote blockquote {
+  margin-left: 1rem;
+  border-left-color: #aaa;
+  background: transparent;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e8e8e8;          /* soft, near-white grey */
+  margin: 2rem 0;
 }
 
 /* ---------- Footer ---------- */
