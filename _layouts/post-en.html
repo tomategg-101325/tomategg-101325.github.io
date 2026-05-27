@@ -8,6 +8,10 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title-en }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% if page.math %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+    </script>
+  {% endif %}
 </head>
 <body>
   <!-- HEADER with navigation -->
@@ -29,7 +33,7 @@
   <!-- MAIN CONTENT (fill this in per page) -->
   <main>
     <h1>{{ page.title }}</h1>
-    <p style="color:gray"><img src="{{ '/assets/icons/calendar.png' | relative_url }}" title="Date" alt="Date" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ '/assets/icons/tag.png' | relative_url }}" title="Tags" alt="Tags" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.tags | join: "、" }}</p>
+    <p style="color:gray"><img src="{{ '/assets/icons/calendar.png' | relative_url }}" title="Date" alt="Date" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ '/assets/icons/tag.png' | relative_url }}" title="Tags" alt="Tags" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> {{ page.tags | join: ", " }}</p>
     {{ content }}
   </main>
 
