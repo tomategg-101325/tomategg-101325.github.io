@@ -9,6 +9,8 @@ math: True
 
 This is a summary note of the semiconductor physics part in the course "Ve311 Electronic Circuits," introducing the basic working principles of a PN junction from the atomic fundamentals.
 
+Note: You may view the Chinese translation of the post [here](/zh-cn/2026/05/27/from-silicon-to-diodes-cn.html), but it is only for reference.
+
 ## Quantum View of Silicon
 
 ### Valence and Conduction Bands
