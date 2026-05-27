@@ -7,7 +7,7 @@ tags: electronics semiconductor notes
 math: True
 ---
 
-本文是“Ve311 电子电路”课程中半导体物理部分的总结笔记，从原子层面介绍 PN 结的基本工作原理。
+本文是“Ve311 电子电路”课程半导体物理部分的总结笔记，从原子层面介绍 PN 结的基本工作原理。
 
 注意：本帖为翻译版，仅供参考。英文原帖在[此](/en-us/2026/05/27/from-silicon-to-diodes-en.html)。
 

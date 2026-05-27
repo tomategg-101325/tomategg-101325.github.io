@@ -180,6 +180,13 @@ blockquote blockquote {
   background: transparent;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e8e8e8;          /* soft, near-white grey */
+  margin: 2rem 0;
+}
+
 /* ---------- Footer ---------- */
 footer {
   text-align: center;
