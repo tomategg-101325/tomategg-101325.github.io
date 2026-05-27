@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 0px;
 }
 
 /* ---------- Links ---------- */
@@ -82,6 +83,7 @@ nav a:focus {
 main {
   flex: 1;
   max-width: 780px;
+  min-width: 0px;
   width: 90%;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -146,8 +148,12 @@ pre code {
 }*/
 
 main img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100% !important;
+  min-width: 0px !important;
+  height: auto !important;
+  display: block !important;          /* removes inline spacing quirks */
+  margin-left: auto;             /* center block image */
+  margin-right: auto;            /* center block image */
   border-radius: 0px;
 }
 
@@ -220,3 +226,12 @@ footer strong {
   }
 }
 
+/* MathJax display equations: horizontal scroll on small screens */
+@media (max-width: 600px) {
+  mjx-container[display="true"] {
+    max-width: 100%;                 /* constrain box to column width */
+    overflow-x: auto;                /* scrollbar appears only if needed */
+    overflow-y: hidden;              /* prevent double scrollbars */
+    -webkit-overflow-scrolling: touch;  /* smooth scrolling on iOS */
+  }
+}
