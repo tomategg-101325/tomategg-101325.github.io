@@ -23,7 +23,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-width: 0px;
 }
 
 /* ---------- Links ---------- */
@@ -83,7 +82,6 @@ nav a:focus {
 main {
   flex: 1;
   max-width: 780px;
-  min-width: 0px;
   width: 90%;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -106,24 +104,23 @@ main p {
   margin-bottom: 1rem;
 }
 
-
+/*
 main code {
   background: #f4f4f4;
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.9em;
-}
+}*/
 
 
 /* Inline */
-/*
 code {
   background: #f3f3f3;
   padding: 0.15em 0.4em;
   border-radius: 4px;
   font-size: 0.9em;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 /* Block */
@@ -145,15 +142,11 @@ pre code {
   background: transparent;
   padding: 0;
   font-size: inherit;
-}*/
+}
 
 main img {
   max-width: 100% !important;
-  min-width: 0px !important;
   height: auto !important;
-  display: block !important;          /* removes inline spacing quirks */
-  margin-left: auto;             /* center block image */
-  margin-right: auto;            /* center block image */
   border-radius: 0px;
 }
 

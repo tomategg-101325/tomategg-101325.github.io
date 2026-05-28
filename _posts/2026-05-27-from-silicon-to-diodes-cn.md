@@ -100,7 +100,7 @@ $$\boxed{n_i^2 = np = BT^3\exp\left(-\frac{E_g}{k_BT}\right)}$$
 
 $$\boxed{\begin{aligned} q \phi_n &= E_f - E_i = k_BT\ln\left(\frac{n}{n_i}\right) & \text{(n-type)} \\ q \phi_p &= E_i - E_f =  k_BT\ln\left(\frac{p}{n_i}\right) & \text{(p-type)} \end{aligned}}$$
 
-<p style="text-align: center;"><img src="/assets/images/silicon-diode/doping-n.png" height="200">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/images/silicon-diode/doping-p.png" height="200"></p>
+<p style="text-align: center;"><img src="/assets/images/silicon-diode/dopings.png" width="400"></p>
 <p style="text-align: center; color: gray;"><small>费米能级变化的可视化，左为 n 型，右为 p 型。（图片取自讲义）</small></p>
 
 ## PN 结
@@ -166,7 +166,7 @@ $$\boxed{I_D = I_S\left(\mathrm{e}^{\frac{qV_a}{k_BT}} - 1\right)}$$
 
 > 💡 可以观察到，当 $$V_a$$ 为正时，由于指数关系，二极管电流 $$I_D$$ 会急剧增加。因此，**绝不应**在无串联电阻的情况下将二极管置于正向偏置。
 
-<p style="text-align: center;"><img src="/assets/images/silicon-diode/forward.png" height="200">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/images/silicon-diode/reverse.png" height="200"></p>
+<p style="text-align: center;"><img src="/assets/images/silicon-diode/biases.png" width="600"></p>
 <p style="text-align: center; color: gray;"><small>正向偏置（左）与反向偏置（右）的可视化。（图片取自讲义）</small></p>
 
 #### 反向击穿

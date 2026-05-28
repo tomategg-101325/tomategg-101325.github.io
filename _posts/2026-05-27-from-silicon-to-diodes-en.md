@@ -100,8 +100,8 @@ The quantitative equations are, with $$q = e$$ being the carrier charge,
 
 $$\boxed{\begin{aligned} q \phi_n &= E_f - E_i = k_BT\ln\left(\frac{n}{n_i}\right) & \text{(n-type)} \\ q \phi_p &= E_i - E_f =  k_BT\ln\left(\frac{p}{n_i}\right) & \text{(p-type)} \end{aligned}}$$
 
-<p style="text-align: center;"><img src="/assets/images/silicon-diode/doping-n.png" height="200">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/images/silicon-diode/doping-p.png" height="200"></p>
-<p style="text-align: center; color: gray;"><small>Visualization of Fermi level change, n-type left, p-type right. (Picture taken from slides)</small></p>
+<p style="text-align: center;"><img src="/assets/images/silicon-diode/dopings.png" width="400"></p>
+<p style="text-align: center; color: gray;"><small>Visualization of Fermi level change, n-type left, p-type right. (Picture taken from lecture slides)</small></p>
 
 ## The PN Junction
 
@@ -166,8 +166,8 @@ where $$I_S$$ is the **reverse saturation current**, which is essentially the dr
 
 > 💡 It can be observed that when $$V_a$$ is positive the diode current $$I_D$$ increases dramatically due to the exponential. Therefore, putting a diode in forward bias without a resistor in series should **always be avoided**.
 
-<p style="text-align: center;"><img src="/assets/images/silicon-diode/forward.png" height="200">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/images/silicon-diode/reverse.png" height="200"></p>
-<p style="text-align: center; color: gray;"><small>Visualization of forward (left) and reverse (right) bias. (Picture taken from slides)</small></p>
+<p style="text-align: center;"><img src="/assets/images/silicon-diode/biases.png" width="600"></p>
+<p style="text-align: center; color: gray;"><small>Visualization of forward (left) and reverse (right) bias. (Picture taken from lecture slides)</small></p>
 
 #### Reverse Breakdown
 
