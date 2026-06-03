@@ -186,6 +186,55 @@ hr {
   margin: 2rem 0;
 }
 
+/* ---------- Tables ---------- */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  overflow: hidden;              /* keeps the radius clean */
+}
+
+main th,
+main td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+main th {
+  background: #2a7ae2;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+main td {
+  color: #333;
+}
+
+main tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+main tbody tr:hover {
+  background: #f0f7ff;
+}
+
+/* Responsive scroll for small screens */
+@media (max-width: 600px) {
+  main table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;        /* optional – keep cells from wrapping */
+    border-radius: 6px;
+  }
+}
+
 /* ---------- Footer ---------- */
 footer {
   text-align: center;
