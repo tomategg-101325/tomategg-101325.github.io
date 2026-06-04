@@ -1,7 +1,7 @@
 ---
 layout: post-en
 title:  "Bipolar Junction Transistors: 1 + 1 > 2"
-date:   2026-06-04 00:00:00 +0800
+date:   2026-06-04 12:00:00 +0800
 categories: en-us
 tags: electronics semiconductor notes
 math: True
