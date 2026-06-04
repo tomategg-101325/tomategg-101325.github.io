@@ -1,7 +1,7 @@
 ---
 layout: post-cn
 title:  "双极结型晶体管：1 + 1 > 2"
-date:   2026-06-04 00:00:00 +0800
+date:   2026-06-04 12:00:00 +0800
 categories: zh-cn
 tags: electronics semiconductor notes
 math: True
