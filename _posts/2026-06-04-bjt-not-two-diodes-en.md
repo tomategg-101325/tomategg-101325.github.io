@@ -202,12 +202,6 @@ The parameters are not just magic numbers: they capture characteristic first-ord
 <p style="text-align: center;"><img src="/assets/images/bjt/hybrid-pi.png" width="400"></p>
 <p style="text-align: center; color: gray;"><small>The hybrid-π model's circuit diagram.</small></p>
 
-Therefore, given an CE amplifier with pull-up resistance $$R_C$$, we can immediately derive the voltage gain of the small signal as (dropping small terms)
-
-$$A_v = -g_m R_C$$
-
-The negative sign implies that the voltage transfer function of the amplifier has a negative slope in the forward active region, matching the curve displayed earlier.
-
 #### Applying the Model
 
 In order to apply the hybrid-$$\pi$$ model, the following steps are taken:
@@ -216,19 +210,46 @@ In order to apply the hybrid-$$\pi$$ model, the following steps are taken:
 2. Compute the parameters in the model;
 3. Analyze the DC bias and AC component separately, then combine using superposition principle.
 
+## The CE Amplifier
+
+### Core Structure
+
+A CE amplifier is essentially an NPN BJT connected using the **common-emitter configuration**. It 
+
+- works at the Q-point determined by the DC component of $$v_B$$, and
+- amplifies the AC component of $$v_B$$ into $$v_C$$.
+
+By the hybrid-$$\pi$$ model, we can derive the voltage gain of the small signal as
+
+$$A_v = -g_m (R_C \parallel r_o) = -g_m \frac{R_C\,r_o}{R_C + r_o}$$
+
+Since the output resistance coming from the Early effect is large, typically the gain can be further rounded to $$A_v \approx -g_m R_C$$ without being too far off.
+
+However, this setup is not optimal due to several reasons, including
+
+- **Unreliableness of DC component**: we cannot guarantee that the DC component of the input voltage is stable enough; and
+- **Sensitivity of gain**: a small fluctuation in either base voltage (affecting $$v_{BE}$$) or temperature (affecting $$V_T$$) results in a large change in $$i_C$$, thus affecting gain.
+
+These factors will cause significant non-linear effects even for a small AC component. So optimizations are needed, and we can approach the problem from three perspectives.
+
+### Optimizations
+
+#### Input Optimization: AC Coupling
+
+We cannot rely on the DC component of the input voltage, which makes our life a bit hard. But look, we have a stable DC voltage source $$V_{CC}$$ at hand. So let's **divide the voltage of $$V_{CC}$$ by two resistors** and use that as the DC bias for the BJT. Then, we can simply **couple the AC component of the input signal onto that DC bias**.
+
+How can we do that? Think of **capacitors: they block DC and allow AC passage**. Therefore, we can take a capacitor, connect one end to the input signal, and feed the other end into $$v_{B}$$. By the superposition principle, $$v_B$$ will now receive a DC component from the division of $$V_{CC}$$ which is stable, and an AC component from the input signal. Done!
+
+<p style="text-align: center;"><img src="/assets/images/bjt/input-coupling.png" width="500"></p>
+<p style="text-align: center; color: gray;"><small>Visualization of input AC coupling.</small></p>
+
 > 💡 Caution: when analyzing the AC component, the pull-up resistor should be tied to the ground, because the constant voltage source $$V_{CC}$$ is turned off for AC analysis.
 
-### Emitter Degeneration
+#### BJT Optimization: Emitter Degeneration
 
-#### Problem: Base Voltage Sensitivity
+The problem with the sensitivity of the gain lies in the **exponential relationship** $$i_C \propto \mathrm{e}^{v_{BE} / V_{T}}$$, making voltage fluctuations incredibly difficult to harness. An operational amplifier is similar: its open-loop gain is also very large and hard to control. However, by feeding the output back to the inverting terminal of an op-amp, the huge open-loop gain can be tampered and used in **negative-feedback regulation**. Can we do something similar here?
 
-The collector current $$I_C$$ follows an exponential relationship with the base voltage $$V_{B}$$ in the CE amplifier, resulting in a high voltage gain. However, this means that even a small fluctuation in $$V_{B}$$ is able to yank $$I_C$$ off by a large amount, causing **significant non-linear effects** in the circuit even when the AC component is very small.
-
-#### Solution: Negative Feedback
-
-Recall that for op-amps in feedback, the output terminal is connected back to the inverting terminal, such that when $$v_{-}$$ deviates, the output $$v_o = A(v_+ - v_-)$$ will spike in the opposite direction, pulling $$v_{-}$$ back to $$v_{+}$$, thus achieving stabilization.
-
-We can do something similar here. In a naked CE amplifier, the emitter is hard-wired to the ground, so it cannot adapt dynamically to the fluctuation in the base voltage. In response, we connect a **pull-down resistor $$R_E$$** between the emitter node and the ground. Let's see what happens when we increase the collector current $$I_C$$ a little.
+Absolutely! In a naked CE amplifier, the emitter is hard-wired to the ground, so it cannot adapt dynamically to the fluctuation in the base voltage. So in response, we connect a **pull-down resistor $$R_E$$** between the emitter node and the ground. Let's see what happens when we increase the collector current $$I_C$$ a little.
 
 - $$I_C$$ increases, causing
 - the voltage drop $$I_CR_E$$ on the pull-down resistor to rise, which results in
@@ -237,20 +258,44 @@ We can do something similar here. In a naked CE amplifier, the emitter is hard-w
 
 When $$I_C$$ dips down, the mechanism is similar. Therefore, by adding a pull-down resistor on the emitter, we can achieve a **negative-feedback regulation** on $$I_C$$, which leads to a better linear effect. This is called **emitter degeneration**. 
 
-But this optimization comes with a cost: the **voltage gain will decrease**. Circuit analysis reveals the reduced gain to be
+But this optimization comes at a cost: the **voltage gain will decrease**. Circuit analysis reveals the reduced gain to be (small terms omitted)
 
 $$A_v = \frac{-g_m R_C}{1 + g_m R_E}$$
 
-and if the pull-up and pull-down resistances are high enough, the gain becomes $$A_v = -R_C / R_E$$, which is completely independent of the BJT itself.
+and if the pull-up and pull-down resistances are high enough, the gain becomes $$A_v \approx -R_C / R_E$$, which is completely independent of the BJT itself, eliminating the impact of errors on $$\beta$$ during manufacture. 
 
-The regulation is targeted at making the DC bias more stable. To minimize this trade-off, engineers often connect a capacitor in parallel with the pull-down resistor, allowing *the AC component to bypass it* with its gain nearly unaffected.
+Key parameters before and after emitter degeneration are derived from small signal analysis.
+
+|     **Parameter**                      |     **Expression**     |     **Before degeneration**               |     **After degeneration**                           |
+|:---------------------------------------|:----------------------:|:-----------------------------------------:|:----------------------------------------------------:|
+| **Voltage gain** $$A_v$$               | $$v_o / v_i$$          | $$-g_m(R_C\parallel r_o)\approx -g_mR_C$$ | $$\frac{-g_mR_C}{1+g_mR_E}\approx -\frac{R_C}{R_E}$$ |
+| **Current gain** $$A_i$$               | $$i_o / i_i$$          | $$\beta$$                                 | $$\beta$$                                            |
+| **Input impedance** $$r_\text{in}$$    | $$v_i / i_i$$          | $$r_\pi$$                                 | $$r_\pi + (\beta + 1)R_E$$                           |
+| **Output impedance** $$r_\text{out}$$  | $$v_o / i_o$$          | $$R_C$$                                   | $$R_C$$                                              |
+
+The regulation is targeted mainly at the DC component but not AC, but a simple pull-down resistor affects both DC and AC. To minimize this trade-off, we can connect a capacitor $$C_E$$ in parallel with $$R_E$$, **allowing the AC component to bypass it** in order to increase its gain. For more finer control, we can even divide $$R_E$$ into two parts and connect $$C_E$$ in parallel with only one of them.
 
 <p style="text-align: center;"><img src="/assets/images/bjt/degeneration.png" width="500"></p>
 <p style="text-align: center; color: gray;"><small>Visualization of emitter degeneration with bypass capacitor.</small></p>
 
+#### Load Optimization: Capacitor Coupling
+
+Real transistors rarely operate individually. As a result, there is a need for the output of one CE amplifier to drive a load or another CE amplifier at the next stage, which typically requires *only the AC component at the output*. Therefore, another coupling capacitor is often connected at the collector terminal before the actual output to remove the DC component of the output signal.
+
+### Complete Structure
+
+With the above three optimizations, we have successfully upgraded an unstable BJT amplifier into a **full-blown, robust CE amplifier**. It now
+
+- achieves stable performance by coupling the input's AC component onto the DC bias generated by dividing $$V_{CC}$$ voltage,
+- creates externally-manageable gain by emitter degeneration, and
+- allows for multi-level connection by capacitor coupling on the output terminal.
+
+<p style="text-align: center;"><img src="/assets/images/bjt/complete.png" width="500"></p>
+<p style="text-align: center; color: gray;"><small>The complete CE amplifier circuit.</small></p>
+
 ## Summary
 
-In our expedition into BJTs, we have seen what amazing characteristics the BJT's coupling effects can produce, which is a lot more interesting than simply two diodes connected back-to-back. Its small-signal properties when connected into a circuit are also intriguing, making BJTs a cornerstone in modern analog circuits with wide application in signal amplifiers.
+In our expedition into BJTs, we have seen what amazing characteristics the BJT's coupling effects can produce, which is a lot more interesting than simply two diodes connected back-to-back. Its small-signal properties when connected into a circuit are also intriguing, making BJTs a cornerstone in modern analog circuits with wide application in CE amplifiers.
 
 ## References
 
