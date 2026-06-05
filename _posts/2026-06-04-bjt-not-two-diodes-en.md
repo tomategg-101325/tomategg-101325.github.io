@@ -262,16 +262,16 @@ But this optimization comes at a cost: the **voltage gain will decrease**. Circu
 
 $$A_v = \frac{-g_m R_C}{1 + g_m R_E}$$
 
-and if the pull-up and pull-down resistances are high enough, the gain becomes $$A_v \approx -R_C / R_E$$, which is completely independent of the BJT itself, eliminating the impact of errors on $$\beta$$ during manufacture. 
+and if the term $$g_m R_E$$ is large enough, the gain becomes $$A_v \approx -R_C / R_E$$, which is completely independent of the BJT itself, eliminating the impact of errors on $$\beta$$ during manufacture. 
 
 Key parameters before and after emitter degeneration are derived from small signal analysis.
 
 |     **Parameter**                      |     **Expression**     |     **Before degeneration**               |     **After degeneration**                           |
 |:---------------------------------------|:----------------------:|:-----------------------------------------:|:----------------------------------------------------:|
-| **Voltage gain** $$A_v$$               | $$v_o / v_i$$          | $$-g_m(R_C\parallel r_o)\approx -g_mR_C$$ | $$\frac{-g_mR_C}{1+g_mR_E}\approx -\frac{R_C}{R_E}$$ |
-| **Current gain** $$A_i$$               | $$i_o / i_i$$          | $$\beta$$                                 | $$\beta$$                                            |
-| **Input impedance** $$r_\text{in}$$    | $$v_i / i_i$$          | $$r_\pi$$                                 | $$r_\pi + (\beta + 1)R_E$$                           |
-| **Output impedance** $$r_\text{out}$$  | $$v_o / i_o$$          | $$R_C$$                                   | $$R_C$$                                              |
+| **Voltage gain** $$A_v$$               | $$v_c / v_b$$          | $$-g_m(R_C\parallel r_o)\approx -g_mR_C$$ | $$\frac{-g_mR_C}{1+g_mR_E}\approx -\frac{R_C}{R_E}$$ |
+| **Current gain** $$A_i$$               | $$i_c / i_b$$          | $$\beta$$                                 | $$\beta$$                                            |
+| **Input impedance** $$r_\text{in}$$    | $$v_b / i_b$$          | $$r_\pi$$                                 | $$r_\pi + (\beta + 1)R_E$$                           |
+| **Output impedance** $$r_\text{out}$$  | $$v_c / i_c$$          | $$R_C$$                                   | $$R_C$$                                              |
 
 The regulation is targeted mainly at the DC component but not AC, but a simple pull-down resistor affects both DC and AC. To minimize this trade-off, we can connect a capacitor $$C_E$$ in parallel with $$R_E$$, **allowing the AC component to bypass it** in order to increase its gain. For more finer control, we can even divide $$R_E$$ into two parts and connect $$C_E$$ in parallel with only one of them.
 
