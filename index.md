@@ -30,5 +30,10 @@ categories: zh-cn-page
     </li>
   {% endfor %}
 </ul>
-<br>
 [查看更多……](/posts/)
+
+<br>
+
+# 友情链接
+
+- <img src="https://images.elecannonic.com/global/logo.png" title="EleCannonic" alt="elecannonic.com" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> [elecannonic.com](https://elecannonic.com)：同校大佬 EleCannonic 的网站，涵盖物理学和电子学知识。
