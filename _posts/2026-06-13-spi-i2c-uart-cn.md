@@ -188,8 +188,8 @@ I2C 利用这一效应避免了短路 (`VCC` 直接接地)，还实现了很多�
 
 I2C 的开始和停止比较特殊：
 
-- **开始条件 (START condition)**：在 SCL 为高电平时，SDA 由高电平变为低电平；
-- **停止条件 (STOP condition)**：在 SCL 为高电平时，SDA 由低电平变为高电平。
+- **开始条件 (START condition)**：在 `SCL` 为高电平时，`SDA` 由高电平变为低电平；
+- **停止条件 (STOP condition)**：在 `SCL` 为高电平时，`SDA` 由低电平变为高电平。
 
 除此之外，还存在一个重复开始条件 (repeated START condition)，是在主机希望发起一个新的通信请求，但是不想发送停止条件从而释放两根线的控制权时使用的。
 
