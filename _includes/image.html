@@ -1,0 +1,17 @@
+{%- comment -%}
+  Include to render a centered image with an optional caption.
+  Parameters:
+    src     : (required) path to the image (relative to site root)
+    width   : (optional) image width in pixels, defaults to 500
+    caption : (optional) caption text shown below the image
+    alt     : (optional) alt text for the image
+{%- endcomment -%}
+
+{%- assign width = include.width | default: 500 -%}
+
+<p style="text-align: center;">
+  <img src="{{ include.src | relative_url }}" width="{{ width }}"{% if include.alt %} alt="{{ include.alt }}"{% endif %}>
+</p>
+{%- if include.caption -%}
+<p style="text-align: center; color: gray;"><small>{{ include.caption }}</small></p>
+{%- endif -%}

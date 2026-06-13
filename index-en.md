@@ -31,5 +31,11 @@ Hi everyone, welcome to my personal site! The site contains tech blogs and my ow
     </li>
   {% endfor %}
 </ul>
-<br>
+
 [View more...](/en/posts/)
+
+<br>
+
+# Links
+
+- <img src="https://images.elecannonic.com/global/logo.png" title="EleCannonic" alt="elecannonic.com" loading="lazy" width="10" height="10" style="aspect-ratio: 100 / 100;"> [elecannonic.com](https://elecannonic.com): Website by fellow student EleCannonic, covering physics and electronics.
