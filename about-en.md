@@ -9,14 +9,14 @@ permalink: /en/about/
 ## Identity
 
 - Class of 2028, **Electronic & Computer Engineering (ECE)**, Shanghai Jiao Tong University
-- Enthusiast of **embedded system** & **IC design**
-- TA for courses "Chemistry", **"Honors Physics I" (current)**, etc.
+- Enthusiast of **IC design** & **embedded system design**
+- TA for courses "Chemistry", "Honors Physics I", **"Introduction to Logic Design" (current)**, etc.
 
 ## Tech Stack
 
-- Hardware: **FPGA (Vivado)**, **MCU (STM32)**, PCB design, I2C/SPI/UART protocols
-- Software: **C/C++**, Python, **Linux** system environment
-- Current interests: RTL-to-GDS flow, static timing analysis, personal website development
+- Hardware: **FPGA (Vivado)**, **MCU (STM32)**, PCB-level & chip-level design, I2C/SPI/UART protocols
+- Software: **C/C++**, Python, **Linux** system environment, **Cadence** EDA tools
+- Current interests: analog/RF integrated circuit design
 
 ## Contacts
 
