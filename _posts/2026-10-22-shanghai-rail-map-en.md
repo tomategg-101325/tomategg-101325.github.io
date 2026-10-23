@@ -15,11 +15,25 @@ Tool used: [aarc.jowei19.com](https://aarc.jowei19.com)
 
 ---
 
+2026.10.23 v1.2 version. Click [here](/assets/images/shanghai-rail/shanghai-rail-map-20261023.svg) for the svg file。
+
+- Added legends
+- Corrected and optimized several stations and their names
+
+{% include image.html
+  src="/assets/images/shanghai-rail/shanghai-rail-map-20261023.webp"
+  width="700"
+  alt="Shanghai Rail Transit Map (2026.10.23 version)"
+  caption="2026.10.23 v1.2 version"
+ %}
+
+---
+
 2026.10.22 v1.1 version. Click [here](/assets/images/shanghai-rail/shanghai-rail-map-20261022.svg) for the svg file.
 
 {% include image.html
   src="/assets/images/shanghai-rail/shanghai-rail-map-20261022.webp"
   width="700"
-  alt="上海全域轨道交通线路图（2026.10.22 版本）"
-  caption="2026.10.22 v1.1 版本"
+  alt="Shanghai Rail Transit Map (2026.10.22 version)"
+  caption="2026.10.22 v1.1 version"
  %}
