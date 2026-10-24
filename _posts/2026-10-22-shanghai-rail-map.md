@@ -15,6 +15,21 @@ math: False
 
 ---
 
+2026.10.24 v1.3 版本。点[此](/assets/images/shanghai-rail/shanghai-rail-map-20261024.svg)获取 svg 文件。
+
+- 优化部分排版
+- 添加沪苏通铁路联络线
+- 移除部分远期规划
+
+{% include image.html
+  src="/assets/images/shanghai-rail/shanghai-rail-map-20261024.webp"
+  width="700"
+  alt="上海全域轨道交通线路图（2026.10.24 版本）"
+  caption="2026.10.24 v1.3 版本"
+ %}
+
+---
+
 2026.10.23 v1.2 版本。点[此](/assets/images/shanghai-rail/shanghai-rail-map-20261023.svg)获取 svg 文件。
 
 - 增加线路图例

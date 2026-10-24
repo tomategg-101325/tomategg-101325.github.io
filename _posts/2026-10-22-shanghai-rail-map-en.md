@@ -15,6 +15,21 @@ Tool used: [aarc.jowei19.com](https://aarc.jowei19.com)
 
 ---
 
+2026.10.24 v1.3 version. Click [here](/assets/images/shanghai-rail/shanghai-rail-map-20261024.svg) for the svg file。
+
+- Optimized layout and formatting
+- Added connecting rails for the Shanghai-Suzhou-Nantong Railway
+- Removed some features that are not planned in the near future
+
+{% include image.html
+  src="/assets/images/shanghai-rail/shanghai-rail-map-20261024.webp"
+  width="700"
+  alt="Shanghai Rail Transit Map (2026.10.24 version)"
+  caption="2026.10.24 v1.32 version"
+ %}
+
+---
+
 2026.10.23 v1.2 version. Click [here](/assets/images/shanghai-rail/shanghai-rail-map-20261023.svg) for the svg file。
 
 - Added legends
